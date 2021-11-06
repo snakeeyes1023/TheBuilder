@@ -1,0 +1,112 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Ressources/Asset/Tours/tower test 3.png" type="Texture" id=1]
+
+[node name="Control" type="Control"]
+anchor_top = -0.000816549
+anchor_right = 1.0
+anchor_bottom = 0.999183
+margin_left = 0.690308
+margin_top = -0.928101
+margin_right = 0.690308
+margin_bottom = -0.928101
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+anchor_left = -0.000335395
+anchor_top = -0.000572408
+anchor_right = -0.000335395
+anchor_bottom = -0.000572408
+margin_left = 135.079
+margin_top = 491.915
+margin_right = 175.079
+margin_bottom = 505.915
+rect_pivot_offset = Vector2( -69.3708, -2.53772 )
+text = "Tour 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="Label3"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -40.0
+margin_top = 18.3433
+margin_right = 472.0
+margin_bottom = 530.343
+rect_scale = Vector2( 0.15, 0.15 )
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+anchor_left = -0.000335395
+anchor_top = -0.000572408
+anchor_right = -0.000335395
+anchor_bottom = -0.000572408
+margin_left = 229.764
+margin_top = 493.228
+margin_right = 269.764
+margin_bottom = 507.228
+rect_pivot_offset = Vector2( 16.8402, 2.88043 )
+text = "Tour 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="Label4"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -40.0
+margin_top = 18.3433
+margin_right = 472.0
+margin_bottom = 530.343
+rect_scale = Vector2( 0.15, 0.15 )
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="LabelArgents" type="Label" parent="."]
+margin_left = 886.154
+margin_top = 537.348
+margin_right = 926.154
+margin_bottom = 551.348
+text = "100 $"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="."]
+anchor_left = -0.000335395
+anchor_top = -0.000572408
+anchor_right = -0.000335395
+anchor_bottom = -0.000572408
+margin_left = 321.919
+margin_top = 493.909
+margin_right = 361.919
+margin_bottom = 507.909
+rect_pivot_offset = Vector2( 16.8402, 2.88043 )
+text = "Tour 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="Label5"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -40.0
+margin_top = 18.3433
+margin_right = 472.0
+margin_bottom = 530.343
+rect_scale = Vector2( 0.15, 0.15 )
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
