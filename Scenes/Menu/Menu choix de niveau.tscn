@@ -24,9 +24,9 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="VBoxContainer"]
-margin_top = 12.0
-margin_right = 145.0
-margin_bottom = 32.0
+margin_top = 11.0
+margin_right = 144.0
+margin_bottom = 31.0
 rect_pivot_offset = Vector2( -987.065, -387.769 )
 text = "Didactitiel"
 __meta__ = {
@@ -34,9 +34,9 @@ __meta__ = {
 }
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
-margin_top = 36.0
-margin_right = 145.0
-margin_bottom = 56.0
+margin_top = 35.0
+margin_right = 144.0
+margin_bottom = 55.0
 rect_pivot_offset = Vector2( -987.065, -387.769 )
 text = "Niveau 1"
 __meta__ = {
@@ -44,9 +44,9 @@ __meta__ = {
 }
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
-margin_top = 60.0
-margin_right = 145.0
-margin_bottom = 80.0
+margin_top = 59.0
+margin_right = 144.0
+margin_bottom = 79.0
 rect_pivot_offset = Vector2( -987.065, -387.769 )
 text = "Niveau 2"
 __meta__ = {
