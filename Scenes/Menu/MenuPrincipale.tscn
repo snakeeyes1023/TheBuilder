@@ -1,16 +1,11 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scripts/Menu/Menu Principale.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Menu/Menu Principale.gd" type="Script" id=1]
 
 [node name="Control" type="Control"]
-anchor_left = -0.000525594
-anchor_right = 0.999474
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 6.99762
-margin_top = -9.68896
-margin_right = 6.99768
-margin_bottom = -9.68896
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

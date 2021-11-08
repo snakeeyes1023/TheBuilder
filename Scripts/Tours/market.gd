@@ -1,8 +1,8 @@
 extends Control
 
-var Tour_de_Base = preload("res://Scenes/Tours/Tour de base.tscn")
+var Tour_de_Base = preload("res://Scenes/Tours/TourDeBase.tscn")
 
-export var argent = 100
+export var argent = 300
 
 func _on_TextureButton1_pressed():
 	if argent >= 100:
