@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Ressources/Asset/Tours/tower test 3.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Tours/market.gd" type="Script" id=2]
+[ext_resource path="res://Ressources/Asset/terrain/voxets-block-variants-squint-a-little_5.png" type="Texture" id=3]
 
 [node name="Market" type="Control"]
 anchor_left = -0.000478387
@@ -16,6 +17,18 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="voxets-block-variants-squint-a-little_6" type="Sprite" parent="."]
+position = Vector2( 866.87, 572.314 )
+scale = Vector2( 0.741284, 0.311256 )
+texture = ExtResource( 3 )
+offset = Vector2( -134.204, -80.6237 )
+
+[node name="voxets-block-variants-squint-a-little_5" type="Sprite" parent="."]
+position = Vector2( 351.245, 572.274 )
+scale = Vector2( 0.727771, 0.311636 )
+texture = ExtResource( 3 )
+offset = Vector2( -134.204, -80.6237 )
 
 [node name="Label1" type="Label" parent="."]
 anchor_left = 0.00041908
@@ -114,7 +127,7 @@ __meta__ = {
 margin_top = 4.0
 margin_right = 86.0
 margin_bottom = 18.0
-text = "Argent: 100 $"
+text = "Argent: 300 $"
 __meta__ = {
 "_edit_use_anchors_": false
 }

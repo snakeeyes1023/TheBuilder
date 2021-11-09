@@ -4,9 +4,11 @@ var Tour_de_Base = preload("res://Scenes/Tours/TourDeBase.tscn")
 
 export var argent = 300
 
+func ready():
+	changer_argent(0)
+
 func _on_TextureButton1_pressed():
 	if argent >= 100:
-		print("test")
 		var instance = Tour_de_Base.instance()
 		get_parent().add_child(instance)
 

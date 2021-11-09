@@ -141,7 +141,7 @@ animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 31 ), ExtResource( 62 ), ExtResource( 39 ), ExtResource( 32 ), ExtResource( 63 ), ExtResource( 42 ), ExtResource( 19 ), ExtResource( 50 ), ExtResource( 21 ), ExtResource( 40 ), ExtResource( 61 ), ExtResource( 56 ), ExtResource( 43 ), ExtResource( 51 ), ExtResource( 12 ), ExtResource( 64 ), ExtResource( 41 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 44 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 25 ), ExtResource( 57 ), ExtResource( 3 ), ExtResource( 29 ), ExtResource( 52 ) ],
 "loop": true,
 "name": "Bas",
-"speed": 24.0
+"speed": 32.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -153,11 +153,11 @@ scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 120 )
 
 [node name="MouvementAnimation" type="AnimatedSprite" parent="."]
-position = Vector2( 33.4657, 36.1403 )
+position = Vector2( 33.4657, 36.524 )
 scale = Vector2( 0.125287, 0.147177 )
 frames = SubResource( 1 )
-animation = "Haut"
-frame = 26
+animation = "Bas"
+frame = 4
 playing = true
 
 [node name="Collision" type="CollisionShape2D" parent="."]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/terrain.png-1f30083998e92e39a67103b3aff24494.stex"
+path="res://.import/voxets-block-variants-squint-a-little_5.png-5acb934685c497944f7f9f4aded130bf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ressources/Asset/terrain/terrain.png"
-dest_files=[ "res://.import/terrain.png-1f30083998e92e39a67103b3aff24494.stex" ]
+source_file="res://Ressources/Asset/terrain/voxets-block-variants-squint-a-little_5.png"
+dest_files=[ "res://.import/voxets-block-variants-squint-a-little_5.png-5acb934685c497944f7f9f4aded130bf.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
