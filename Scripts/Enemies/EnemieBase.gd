@@ -10,8 +10,8 @@ func _init(_vitesse = 0, _point_de_vie = 0).():
 	enemie_point_de_vie = _point_de_vie
 
 
-func _physics_process(delta):
-	#Obtenir la position du personnage
+func mouvement():
+		#Obtenir la position du personnage
 	var _player = get_tree().get_root().get_node("Jeu/Personnage")
 	#Si le personnage existe
 	if _player:
@@ -19,7 +19,6 @@ func _physics_process(delta):
 		var player_direction = _player.position - self.position
 		animate(player_direction)
 		move_and_slide(enemie_vitesse * player_direction.normalized())
-
 
 func animate(direction):
 	if direction.y > 0:

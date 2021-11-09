@@ -7,3 +7,5 @@ export (int) var vitesse = 70
 func _init().(vitesse, point_de_vie):
 	pass
 	
+func _physics_process(delta):
+	self.mouvement()
