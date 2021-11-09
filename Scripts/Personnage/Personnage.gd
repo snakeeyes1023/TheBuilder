@@ -5,7 +5,7 @@ export (int) var speed = 150
 var velocity = Vector2()
 
 var action = false
-var animationNom = "Haut"
+var animationNom = ""
 var doubleAnimation = false
 
 
