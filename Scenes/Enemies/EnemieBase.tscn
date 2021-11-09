@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "Haut",
+"speed": 5.0
+} ]
+
+[node name="EnemieBase" type="KinematicBody2D"]
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Animation" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "Haut"
