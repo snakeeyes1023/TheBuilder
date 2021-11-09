@@ -1,6 +1,6 @@
 extends Control
 
-var Tour_de_Base = preload("res://Scenes/Tours/TourDeBase.tscn")
+var Placeur_de_tour = preload("res://Scenes/Tours/PlaceurDeTour.tscn")
 
 export var argent = 300
 
@@ -9,7 +9,7 @@ func ready():
 
 func _on_TextureButton1_pressed():
 	if argent >= 100:
-		var instance = Tour_de_Base.instance()
+		var instance = Placeur_de_tour.instance()
 		get_parent().add_child(instance)
 
 

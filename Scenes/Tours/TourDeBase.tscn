@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/Tours/Tour de base.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Tours/TourDeBase.gd" type="Script" id=1]
 [ext_resource path="res://Ressources/Asset/Tours/tower test 3.png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=3]
 radius = 173.912
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 263.293, 260.687 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -13,15 +16,22 @@ script = ExtResource( 1 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
 
-[node name="Zone de tire" type="Area2D" parent="towerTest1"]
-position = Vector2( -1923.81, -986.255 )
-scale = Vector2( 10, 10 )
+[node name="zoneDeDetection" type="Area2D" parent="towerTest1"]
+visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="towerTest1/Zone de tire"]
-position = Vector2( 192.145, 97.9325 )
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="towerTest1/zoneDeDetection"]
+position = Vector2( -2.36008, -6.93001 )
+scale = Vector2( 10, 10 )
+shape = SubResource( 3 )
 
 [node name="canon" type="Position2D" parent="towerTest1"]
 position = Vector2( 1.41357, -347.733 )
 
 [node name="Reload" type="Timer" parent="."]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 0.206299, 0 )
+scale = Vector2( 0.1, 0.1 )
+shape = SubResource( 4 )
