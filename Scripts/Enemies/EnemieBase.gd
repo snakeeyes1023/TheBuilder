@@ -26,9 +26,9 @@ func mouvement():
 	
 #Animation des mouvements de l'enemie
 func animate_deplacement(direction):
-	if direction.y > 0:
+	if direction.y >= 0:
 		animation = "Bas"
-	if direction.y < 0:
+	else:
 		animation = "Haut"
 	#Attribution de l'animation à executer	
 	$Animation.animation = animation
@@ -42,6 +42,10 @@ func obtenir_collision():
 			return true
 		return false
 	return null
+
+#position de départ de l'ennemie
+func start(pos):
+	self.position = pos
 
 
 func hit(degat):

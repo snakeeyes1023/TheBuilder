@@ -23,7 +23,7 @@ func limiter_attaque():
 	if differenceTemp <= frequence_attaque:
 		return false
 	derniere_attaque = OS.get_ticks_msec()	
-	return true	
+	return true
 
 
 func attaquer_personnage():
