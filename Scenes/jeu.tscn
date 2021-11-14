@@ -89,7 +89,6 @@ visible = false
 
 [node name="Zombie" parent="." instance=ExtResource( 5 )]
 
-[node name="Personnage" parent="." instance=ExtResource( 1 )]
-position = Vector2( 560.357, 227.484 )
-
 [node name="Market" parent="." instance=ExtResource( 2 )]
+
+[node name="Personnage" parent="." instance=ExtResource( 1 )]
