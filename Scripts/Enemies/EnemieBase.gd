@@ -49,4 +49,4 @@ func start(pos):
 
 
 func hit(degat):
-	enemie_point_de_vie -= 1
+	enemie_point_de_vie -= degat

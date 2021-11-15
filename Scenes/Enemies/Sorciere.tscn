@@ -63,7 +63,6 @@ shape = SubResource( 1 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "Droite"
-frame = 1
 playing = true
 
 [node name="Spawner" type="Position2D" parent="."]
