@@ -3,7 +3,7 @@ extends Control
 var Placeur_de_tourBase = preload("res://Scenes/Tours/PlaceurDeTourBase.tscn")
 var Placeur_de_tourZone = preload("res://Scenes/Tours/PlaceurDeTourZone.tscn")
 var Placeur_de_tourPique = preload("res://Scenes/Tours/PlaceurDeTourPique.tscn")
-export var argent = 300
+export var argent = 600
 
 func ready():
 	changer_argent(0)
