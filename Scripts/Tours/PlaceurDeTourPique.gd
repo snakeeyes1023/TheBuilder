@@ -1,8 +1,8 @@
 extends Node2D
 
-export var price = 200 # le changer aussi dans le menu des tours
+export var price = 100 # le changer aussi dans le menu des tours
 
-var TourDeBase = preload("res://Scenes/Tours/TourDeBase.tscn")
+var TourPique = preload("res://Scenes/Tours/TourPique.tscn")
 
 var place_libre = 0 
 
@@ -18,10 +18,10 @@ func _process(_delta):
 	if Input.is_action_just_pressed("click_gauche") and !(place_libre > 0):
 		get_parent().get_node("Market").changer_argent(-price)
 		queue_free()
-		var instance = TourDeBase.instance()
+		var instance = TourPique.instance()
 		instance.position = position
 		get_parent().add_child(instance)
-		TourDeBase.instance()
+		TourPique.instance()
 
 
 func _on_Area2D_area_entered(area):
