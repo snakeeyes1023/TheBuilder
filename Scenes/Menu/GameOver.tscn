@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Menu/GameOver.gd" type="Script" id=1]
+[ext_resource path="res://Ressources/musicEtSons/mort.mp3" type="AudioStream" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 3.76701e-05
+anchor_right = 1.0557
+anchor_bottom = 0.143333
+margin_left = 451.961
+margin_top = 249.0
+margin_right = -523.039
+margin_bottom = 250.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 12.0
+margin_right = 114.0
+margin_bottom = 26.0
+text = "Game Over"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonMenu" type="Button" parent="VBoxContainer"]
+margin_top = 30.0
+margin_right = 114.0
+margin_bottom = 50.0
+text = "Retour au menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonQuitter" type="Button" parent="VBoxContainer"]
+margin_top = 54.0
+margin_right = 114.0
+margin_bottom = 74.0
+text = "Quitter"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = 9.087
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/ButtonMenu" to="." method="_on_ButtonMenu_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonQuitter" to="." method="_on_ButtonQuitter_pressed"]

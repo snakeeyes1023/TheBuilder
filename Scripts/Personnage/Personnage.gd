@@ -79,3 +79,5 @@ func hit(degat):
 
 func mort():
 	queue_free()
+	get_tree().change_scene("res://Scenes/Menu/GameOver.tscn")
+	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Bomber.gd" type="Script" id=1]
 [ext_resource path="res://Ressources/Asset/Enemie/Bomber/Bas/Deplacement/tile004.png" type="Texture" id=2]
@@ -32,6 +32,7 @@
 [ext_resource path="res://Ressources/Asset/Enemie/Bomber/Explosion/tile004.png" type="Texture" id=30]
 [ext_resource path="res://Ressources/Asset/Enemie/Bomber/Explosion/tile005.png" type="Texture" id=31]
 [ext_resource path="res://Ressources/Asset/Enemie/Bomber/Explosion/tile003.png" type="Texture" id=32]
+[ext_resource path="res://Ressources/musicEtSons/explosion.mp3" type="AudioStream" id=33]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 20.2264
@@ -57,6 +58,11 @@ animations = [ {
 "frames": [ ExtResource( 23 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 16 ), ExtResource( 2 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "Bas",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 5 ), ExtResource( 24 ), ExtResource( 20 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "Gauche",
 "speed": 20.0
 } ]
 
@@ -101,6 +107,10 @@ frames = SubResource( 4 )
 animation = "Explosion"
 frame = 5
 playing = true
+
+[node name="SonExplosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 33 )
+volume_db = 1.01
 
 [connection signal="body_entered" from="DistanceAttaque" to="." method="_tour_detecter"]
 [connection signal="body_shape_entered" from="DistanceAttaque" to="." method="_on_DistanceAttaque_body_shape_entered"]

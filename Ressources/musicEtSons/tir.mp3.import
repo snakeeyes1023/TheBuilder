@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/tir.mp3-e5c112edec42a85ba79ead65f1a6b7d4.mp3str"
+
+[deps]
+
+source_file="res://Ressources/musicEtSons/tir.mp3"
+dest_files=[ "res://.import/tir.mp3-e5c112edec42a85ba79ead65f1a6b7d4.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -142,6 +142,11 @@ animations = [ {
 "loop": true,
 "name": "Bas",
 "speed": 32.0
+}, {
+"frames": [ ExtResource( 54 ), ExtResource( 112 ), ExtResource( 37 ), ExtResource( 55 ), ExtResource( 38 ), ExtResource( 60 ), ExtResource( 70 ), ExtResource( 68 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 69 ), ExtResource( 67 ), ExtResource( 105 ), ExtResource( 79 ), ExtResource( 88 ), ExtResource( 85 ), ExtResource( 73 ), ExtResource( 76 ), ExtResource( 97 ), ExtResource( 86 ), ExtResource( 87 ), ExtResource( 99 ), ExtResource( 89 ), ExtResource( 75 ), ExtResource( 78 ), ExtResource( 90 ), ExtResource( 101 ), ExtResource( 91 ), ExtResource( 102 ), ExtResource( 95 ) ],
+"loop": true,
+"name": "Gauche",
+"speed": 24.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]

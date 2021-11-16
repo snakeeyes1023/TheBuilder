@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sorciere.mp3-2a9088566898703cf3657b4e8bf900c1.mp3str"
+
+[deps]
+
+source_file="res://Ressources/musicEtSons/sorciere.mp3"
+dest_files=[ "res://.import/sorciere.mp3-2a9088566898703cf3657b4e8bf900c1.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

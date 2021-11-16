@@ -52,6 +52,7 @@ func attaquer():
 func explosion():
 	$Explosion.visible = true
 	$Explosion.playing = true
+	$SonExplosion.play()
 	
 	for i in len(tour_a_porter):
 		var body = tour_a_porter[i]
