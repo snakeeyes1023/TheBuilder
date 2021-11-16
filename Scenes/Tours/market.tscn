@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Ressources/Asset/Tours/tower test 3.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Tours/market.gd" type="Script" id=2]
 [ext_resource path="res://Ressources/Asset/terrain/voxets-block-variants-squint-a-little_5.png" type="Texture" id=3]
+[ext_resource path="res://Ressources/Asset/Tours/turret_01_mk1.png" type="Texture" id=4]
+[ext_resource path="res://Ressources/Asset/Tours/lazer.png" type="Texture" id=5]
+[ext_resource path="res://Ressources/Asset/Tours/long_metal_spike.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 520.719, 61.0019 )
+extents = Vector2( 510.213, 23.8218 )
 
 [node name="Market" type="Control"]
 anchor_left = -0.000478387
@@ -62,6 +65,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="long_metal_spike" type="Sprite" parent="Label1/TextureButton1"]
+position = Vector2( -1334.3, 749.679 )
+scale = Vector2( 4.76787, 2.29531 )
+texture = ExtResource( 6 )
+offset = Vector2( 332.421, -212.32 )
+
 [node name="Label2" type="Label" parent="."]
 margin_left = 229.421
 margin_top = 492.885
@@ -88,6 +97,12 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="Label2/TextureButton2"]
+position = Vector2( 251.864, 300.991 )
+scale = Vector2( 7.19782, 5.44962 )
+texture = ExtResource( 4 )
+hframes = 8
 
 [node name="Label3" type="Label" parent="."]
 margin_left = 321.576
@@ -116,6 +131,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sprite" type="Sprite" parent="Label3/TextureButton3"]
+position = Vector2( 261.31, 250.919 )
+scale = Vector2( 1.06359, 2.39472 )
+texture = ExtResource( 5 )
+vframes = 11
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 844.0
 margin_top = 534.0
@@ -130,7 +151,7 @@ __meta__ = {
 margin_top = 4.0
 margin_right = 86.0
 margin_bottom = 18.0
-text = "Argent: 300 $"
+text = "Argent: 600 $"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -147,7 +168,7 @@ __meta__ = {
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 510.458, 552.019 )
+position = Vector2( 513.084, 567.376 )
 shape = SubResource( 1 )
 
 [connection signal="pressed" from="Label1/TextureButton1" to="." method="_on_TextureButton1_pressed"]
