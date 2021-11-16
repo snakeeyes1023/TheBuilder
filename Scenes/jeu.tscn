@@ -1,5 +1,4 @@
 [gd_scene load_steps=11 format=2]
-
 [ext_resource path="res://Scenes/Personnage/Personnage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Tours/market.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Menu/PauseMenu.tscn" type="PackedScene" id=3]
