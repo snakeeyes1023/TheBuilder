@@ -80,14 +80,14 @@ height = 4.77368
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 22 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "Gauche",
-"speed": 20.0
-}, {
 "frames": [ ExtResource( 13 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "Droite",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Gauche",
 "speed": 20.0
 }, {
 "frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 62 ), ExtResource( 55 ), ExtResource( 63 ), ExtResource( 70 ), ExtResource( 52 ), ExtResource( 50 ), ExtResource( 56 ), ExtResource( 71 ), ExtResource( 57 ), ExtResource( 49 ), ExtResource( 66 ), ExtResource( 58 ), ExtResource( 54 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 61 ), ExtResource( 69 ), ExtResource( 51 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 53 ) ],
@@ -114,7 +114,7 @@ position = Vector2( -0.0197158, -0.775525 )
 scale = Vector2( 0.0600541, 0.0796936 )
 frames = SubResource( 2 )
 animation = "Bas"
-frame = 14
+frame = 16
 playing = true
 
 [node name="Spawner" type="Position2D" parent="."]

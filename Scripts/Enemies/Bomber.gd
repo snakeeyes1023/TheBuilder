@@ -6,8 +6,8 @@ export (int) var frequence_attaque = 500
 var derniere_attaque = OS.get_ticks_msec()
 var attaque_en_cours = false
 var etape_animation = 0
-
-var tour = ["Jeu/Tour", "Jeu/Tour2", "Jeu/towerTest1"]
+var tour_a_porter = []
+var tour = ["Jeu/TourBase", "Jeu/TourZone"]
 
 func _init().(vitesse, point_de_vie, "Jeu/Tour"):
 	pass
@@ -15,10 +15,11 @@ func _init().(vitesse, point_de_vie, "Jeu/Tour"):
 
 func _physics_process(delta):
 	if attaque_en_cours:
-		if !tour_a_porter():
+		if len(tour_a_porter) == 0 && etape_animation < 9:
 			tour_disparu()
-		else:
-			attaquer()
+			print("test tour disparu")
+			return
+		attaquer()
 		return
 	#Déplacement du personnage lorsque qu'aucune attaque est en cours
 	recherche_tour()
@@ -30,7 +31,6 @@ func recherche_tour():
 	$Explosion.visible = false
 	
 	if !self.cible_en_poursuite:
-		print("nouvelle cible")
 		self.cible = tour[randi() % tour.size()]
 
 
@@ -42,7 +42,7 @@ func attaquer():
 			explosion()
 		
 		if etape_animation >= 10:
-			tour_disparu()
+			print("je SUIS MORTTTTTT")
 			self.mort()
 
 
@@ -53,12 +53,10 @@ func explosion():
 	$Explosion.visible = true
 	$Explosion.playing = true
 	
-	for i in range(get_slide_count() - 1):
-		var collision = get_slide_collision(i)
-		var nom_opposant = collision.collider.name;
-		if nom_opposant == "tour" || nom_opposant == "personnage":
-			collision.collider.hit(20)
-
+	for i in len(tour_a_porter):
+		var body = tour_a_porter[i]
+		body.get_parent().hit(40)
+	attaque_en_cours = true
 
 #limite la fréquence de tire du vaisseau	
 func limite_vitesse_attaque():
@@ -71,19 +69,11 @@ func limite_vitesse_attaque():
 
 func _on_DistanceAttaque_body_shape_entered(body_id, body, body_shape, local_shape):
 	attaque_en_cours = true
+	tour_a_porter.append(body)
 	self.animation_en_cours = false
-	print("bomber attaque en cours")
 
 
 func tour_disparu():
 	etape_animation = 0
 	attaque_en_cours = false
 	self.animation_en_cours = true
-
-
-func tour_a_porter():
-	for i in range(get_slide_count() - 1):
-		var collision = get_slide_collision(i)
-		if collision.collider.name == "tour":
-			return true
-	return false
