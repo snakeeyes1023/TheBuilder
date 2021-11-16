@@ -21,7 +21,7 @@ func _on_Reload_timeout():
 
 func shoot():
 	var b = Balle.instance()
-	b.start($Canon/canon.global_position, $Canon.rotation-45)
+	b.start($Canon/canon.global_position, $Canon.rotation - 1.57)
 	get_parent().add_child(b)
 	recharge = true
 	$Reload.start()
