@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scripts/Menu/Menu Principale.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Menu/MenuPrincipale.gd" type="Script" id=1]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -23,34 +23,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="VBoxContainer"]
-margin_top = 11.0
+[node name="ButtonJouer" type="Button" parent="VBoxContainer"]
+margin_top = 23.0
 margin_right = 144.0
-margin_bottom = 31.0
+margin_bottom = 43.0
 rect_pivot_offset = Vector2( -987.065, -387.769 )
 text = "Jouer"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
-margin_top = 35.0
+[node name="ButtonQuitter" type="Button" parent="VBoxContainer"]
+margin_top = 47.0
 margin_right = 144.0
-margin_bottom = 55.0
-text = "Options"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button3" type="Button" parent="VBoxContainer"]
-margin_top = 59.0
-margin_right = 144.0
-margin_bottom = 79.0
+margin_bottom = 67.0
 text = "Quitter"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonJouer" to="." method="_on_ButtonJouer_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonQuitter" to="." method="_on_ButtonQuitter_pressed"]
