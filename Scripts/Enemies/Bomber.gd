@@ -52,6 +52,7 @@ func attaquer():
 func explosion():
 	$Explosion.visible = true
 	$Explosion.playing = true
+	$SonExplosion.play()
 	
 	for i in range(get_slide_count() - 1):
 		var collision = get_slide_collision(i)

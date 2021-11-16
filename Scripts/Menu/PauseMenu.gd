@@ -25,6 +25,7 @@ func _on_ButtonReprendre_pressed():
 func _on_ButtonRecommencer_pressed():
 	get_parent().get_tree().reload_current_scene()
 	get_tree().paused = false
+	InformationJeu.reinitialiser_vie()
 	self.hide()
 
 func _on_ButtonMenu_pressed():

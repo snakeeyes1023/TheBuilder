@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/spaceship shooter .mp3-77d2efef7c848c2c60a63bf8139a66a1.mp3str"
+
+[deps]
+
+source_file="res://Ressources/musicEtSons/spaceship shooter .mp3"
+dest_files=[ "res://.import/spaceship shooter .mp3-77d2efef7c848c2c60a63bf8139a66a1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

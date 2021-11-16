@@ -65,6 +65,7 @@ func attaquer_personnage():
 
 #obtenir laposition du spawner selon le nombre d'ennemie apparu
 func obtenir_position_spawner():
+	$SonRire.play()
 	if enemie_apparu == 0:
 		return $Spawner.global_position
 		

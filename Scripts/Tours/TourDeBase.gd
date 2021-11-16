@@ -23,6 +23,7 @@ func shoot():
 	var b = Balle.instance()
 	b.start($Canon/canon.global_position, $Canon.rotation - 1.57)
 	get_parent().add_child(b)
+	$SonTir.play()
 	recharge = true
 	$Reload.start()
 	$Reload.set_wait_time(reloadTime)
