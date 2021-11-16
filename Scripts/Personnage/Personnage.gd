@@ -7,7 +7,7 @@ var velocity = Vector2()
 var action = false
 var animationNom = "Haut"
 var doubleAnimation = false
-
+var vie = 20
 
 func _physics_process(delta):
 	action = false
@@ -70,3 +70,12 @@ func animate():
 		return
 	$MouvementAnimation.animation = animationNom	
 	$MouvementAnimation.playing = false
+
+
+func hit(degat):
+	InformationJeu.pointDeVie -= degat
+	if InformationJeu.pointDeVie <= 0:
+		mort()
+
+func mort():
+	queue_free()

@@ -27,18 +27,19 @@
 [ext_resource path="res://Scripts/Enemies/Zombie.gd" type="Script" id=25]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 21.4663
+radius = 15.6432
+height = 0.0
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 13 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "Droite",
-"speed": 20.0
-}, {
 "frames": [ ExtResource( 22 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "Gauche",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "Droite",
 "speed": 20.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 3 ) ],
@@ -53,15 +54,17 @@ animations = [ {
 } ]
 
 [node name="Zombie" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource( 25 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Animation" type="AnimatedSprite" parent="."]
-position = Vector2( -0.256728, -1.56739 )
-scale = Vector2( 1.32813, 1.33854 )
+position = Vector2( 0.273002, -2.09712 )
+scale = Vector2( 0.930832, 1.00746 )
 frames = SubResource( 2 )
 animation = "Droite"
-frame = 3
+frame = 5
 playing = true
