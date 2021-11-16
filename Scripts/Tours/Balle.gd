@@ -1,5 +1,5 @@
 extends KinematicBody2D
-export var speed = 700
+export var speed = 1000
 var velocity = Vector2()
 export var degat = 2
 
@@ -23,7 +23,3 @@ func destroy():
 
 func _on_VisibilityNotifier2D_screen_exited():
 	destroy()
-
-
-
-

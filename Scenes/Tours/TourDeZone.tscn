@@ -83,9 +83,9 @@ texture = ExtResource( 2 )
 
 [node name="Reload" type="Timer" parent="."]
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+[node name="BaseDetour" type="KinematicBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseDetour"]
 position = Vector2( 0.206299, 0 )
 scale = Vector2( 0.1, 0.1 )
 shape = SubResource( 1 )
@@ -94,7 +94,7 @@ shape = SubResource( 1 )
 position = Vector2( -0.461274, 0.00399148 )
 scale = Vector2( 0.809605, 0.368413 )
 frames = SubResource( 13 )
-frame = 6
+frame = 9
 playing = true
 
 [node name="carre-gris-fond-transparent" type="Sprite" parent="Lazer"]

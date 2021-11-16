@@ -7,7 +7,7 @@ var TourPique = preload("res://Scenes/Tours/TourPique.tscn")
 var place_libre = 0 
 
 
-func _process(_delta):
+func _physics_process(_delta):
 	position = get_global_mouse_position()
 	if Input.is_action_just_pressed("click_droit"):
 		queue_free()

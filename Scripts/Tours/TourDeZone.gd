@@ -2,7 +2,7 @@ extends Node2D
 
 export var degat = 3
 
-func _process(_delta):
+func _physics_process(_delta):
 	$Lazer.rotation += 0.05
 
 

@@ -1,18 +1,28 @@
 extends Node2D
 
-var ennemisDansZone = []
-
-func _process(_delta):
-	if !ennemisDansZone.empty():
-		print(ennemisDansZone[0])
+export var reloadTime = 0.5
+var recharge = false
+var Balle = preload("res://Scenes/Tours/Balle.tscn")
 
 
 
-func _on_zoneDeDetection_body_entered(body):
-	#ennemisDansZone.push_back(body)
-	pass
+func _physics_process(_delta):
+	if !recharge && $Canon/RayCast2D.is_colliding() && $Canon/RayCast2D.is_in_group("ennemis"):
+		print($Canon/RayCast2D.get_collider().name)
+		print( $Canon.rotation)
+		shoot()
+	else:
+		$Canon.rotation += 0.05
 
 
-func _on_zoneDeDetection_body_exited(body):
-	#ennemisDansZone.remove(ennemisDansZone.find())
-	pass
+func _on_Reload_timeout():
+	recharge = false
+
+
+func shoot():
+	var b = Balle.instance()
+	b.start($Canon/canon.global_position, $Canon.rotation-45)
+	get_parent().add_child(b)
+	recharge = true
+	$Reload.start()
+	$Reload.set_wait_time(reloadTime)
