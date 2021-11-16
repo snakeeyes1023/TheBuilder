@@ -20,11 +20,11 @@ func _physics_process(delta):
 		return
 		
 	if limiter_attaque():
-		print("attaque en cours")
+		self.animation_en_cours = false
 		attaque_en_cours = true
 		derniere_apparition = OS.get_ticks_msec()
 		return
-
+	self.animation_en_cours = true
 	#Déplacement du personnage lorsque qu'aucune attaque est en cours
 	self.mouvement()
 
@@ -60,7 +60,6 @@ func attaquer_personnage():
 		instance_zombie.start(position_depart)
 		
 		get_tree().get_root().get_node("Jeu").add_child(instance_zombie)
-		print("nouveau enemie apparu")
 		enemie_apparu += 1
 
 

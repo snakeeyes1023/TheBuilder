@@ -3,26 +3,36 @@ extends KinematicBody2D
 var enemie_vitesse = 100
 var enemie_point_de_vie = 1
 var animation = "Bas"
-
+var animation_en_cours = true
+var cible = "Jeu/Personnage"
+var cible_en_poursuite = true
 
 #intialisation des information de l'enemie par la classe enfant
-func _init(_vitesse = 0, _point_de_vie = 0).():
+func _init(_vitesse = 0, _point_de_vie = 0, _cible = null).():
 	enemie_vitesse = _vitesse
 	enemie_point_de_vie = _point_de_vie
+	if _cible != null:
+		cible = _cible
 
 
 #Fait bouger l'enemie vers le joueur
 #Retourne Si une collision avec le personnage est detectée
 func mouvement():
-	#Obtenir la position du personnage
-	var _player = get_tree().get_root().get_node("Jeu/Personnage")
+	#Obtenir la position de la cible
+	var _player = get_tree().get_root().get_node(cible)
 	#Si le personnage existe
-	if _player:
+	if _player:	
+		if animation_en_cours != $Animation.playing:
+			$Animation.playing = animation_en_cours
+			
 		#calcule de la trajectoire à utiliser
 		var player_direction = _player.position - self.position
 		animate_deplacement(player_direction)
 		move_and_slide(enemie_vitesse * player_direction.normalized())	
-	
+		cible_en_poursuite = true
+		
+	else:
+		cible_en_poursuite = false
 	
 #Animation des mouvements de l'enemie
 func animate_deplacement(direction):
@@ -50,3 +60,10 @@ func start(pos):
 
 func hit(degat):
 	enemie_point_de_vie -= degat
+	if enemie_point_de_vie <= 0:
+		mort()
+
+func mort():
+	queue_free()
+
+

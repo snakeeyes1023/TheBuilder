@@ -10,7 +10,7 @@ func _init().(vitesse, point_de_vie):
 	pass
 	
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	self.mouvement()
 	
 	if self.obtenir_collision() == true:
