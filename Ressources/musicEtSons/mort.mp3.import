@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mort.mp3-d954839dd1605a83b5913462aacd10b6.mp3str"
+
+[deps]
+
+source_file="res://Ressources/musicEtSons/mort.mp3"
+dest_files=[ "res://.import/mort.mp3-d954839dd1605a83b5913462aacd10b6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
