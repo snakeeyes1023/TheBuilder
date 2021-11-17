@@ -1,0 +1,96 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Ressources/Asset/tuto/Keyboard keys (transparent).png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Menu/Tuto.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.254902, 0.203922, 0.00784314, 0.588235 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.184314, 0.172549, 0.172549, 0.862745 )
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Control" type="Control"]
+anchor_left = 0.000357389
+anchor_top = 0.000609996
+anchor_right = 1.00036
+anchor_bottom = 1.00061
+margin_left = 77.9569
+margin_top = -68.0376
+margin_right = 77.9569
+margin_bottom = -68.0375
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.500357
+anchor_right = 0.500357
+margin_left = -249.545
+margin_top = 128.455
+margin_right = 250.455
+margin_bottom = 431.455
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="a" type="Sprite" parent="."]
+position = Vector2( 470.728, 272.172 )
+texture = ExtResource( 1 )
+hframes = 8
+vframes = 2
+
+[node name="d" type="Sprite" parent="."]
+position = Vector2( 533.335, 271.982 )
+texture = ExtResource( 1 )
+hframes = 8
+vframes = 2
+frame = 2
+
+[node name="w" type="Sprite" parent="."]
+position = Vector2( 106.66, 186.948 )
+texture = ExtResource( 1 )
+offset = Vector2( 395.199, 68.1989 )
+hframes = 8
+vframes = 4
+frame = 1
+
+[node name="s" type="Sprite" parent="."]
+position = Vector2( 502.225, 288.086 )
+texture = ExtResource( 1 )
+hframes = 8
+vframes = 4
+frame = 9
+
+[node name="DepleacementExplication" type="RichTextLabel" parent="."]
+anchor_left = 0.265
+anchor_top = 0.22
+anchor_right = 0.744
+anchor_bottom = 0.714
+margin_left = 51.3654
+margin_top = 75.9377
+margin_right = -50.1306
+margin_bottom = -180.462
+text = "En utilisant les touches wasd vous pouvez vous déplacer."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TourExplication" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 321.199
+margin_top = 208.499
+margin_right = 715.199
+margin_bottom = 310.499
+text = "Vous devez survivre face aux hordes d'ennemis. Le meilleur moyen d'y arriver est de placer des tours. Cliquer sur une tour afin de la sélectionner pour ensuite la placer sur le terrain si vous avez l’argent. Attention vous ne pouvez pas poser de tour ou il en existe déjà ou trop proche d’une tour existante."
+__meta__ = {
+"_edit_use_anchors_": false
+}
