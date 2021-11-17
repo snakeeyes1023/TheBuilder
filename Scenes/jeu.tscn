@@ -90,6 +90,12 @@ tile_data = PoolIntArray( -327683, 1, 0, -327682, 1, 1, -327681, 1, 1, -393216, 
 
 [node name="Pause" parent="." instance=ExtResource( 3 )]
 visible = false
+anchor_right = 0.00105143
+anchor_bottom = 0.0
+margin_left = -8.0
+margin_top = 1.0
+margin_right = 1052.0
+margin_bottom = 602.0
 
 [node name="Zombie" parent="." instance=ExtResource( 5 )]
 
