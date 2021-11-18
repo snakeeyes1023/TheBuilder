@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 263.293, 260.687 )
 
-[node name="Node2D" type="Node2D"]
+[node name="TourPique" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="towerTest1" type="Sprite" parent="."]
