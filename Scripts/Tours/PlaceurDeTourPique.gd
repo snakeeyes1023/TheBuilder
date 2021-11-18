@@ -30,7 +30,8 @@ func _on_Area2D_area_entered(area):
 
 
 func _on_Area2D_area_exited(area):
-	place_libre -= 1
+	if(area.name != "zoneDeDetection" && area.name != "Lazer"):
+		place_libre -= 1
 
 
 func _on_Area2D_body_entered(body):
