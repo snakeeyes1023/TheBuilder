@@ -30,14 +30,12 @@ func recherche_tour():
 	$Explosion.visible = false
 	
 	if !self.cible_en_poursuite:
-		print("nouvelle cible")
 		self.cible = tour[randi() % tour.size()]
 
 
 func attaquer():
 	if limite_vitesse_attaque():
 		etape_animation += 1
-		print("bomber attaque")
 		if etape_animation == 9:
 			explosion()
 		
@@ -73,7 +71,7 @@ func limite_vitesse_attaque():
 func _on_DistanceAttaque_body_shape_entered(body_id, body, body_shape, local_shape):
 	attaque_en_cours = true
 	self.animation_en_cours = false
-	print("bomber attaque en cours")
+
 
 
 func tour_disparu():

@@ -6,6 +6,7 @@ var sClick = false
 var wClick = false
 var tutoTouchDone = false
 
+var tour = ["Jeu/Tour", "Jeu/Tour2", "Jeu/towerTest1"]
 
 func _process(delta):
 	if !tutoTouchDone:
@@ -30,4 +31,6 @@ func _process(delta):
 			$DepleacementExplication.visible = false
 			$TourExplication.visible = true
 	else:
-		print("Regarder si une tour existe pour ensuite enlever le tuto")
+		if (tour[randi() % tour.size()]) != null:
+			queue_free()
+
