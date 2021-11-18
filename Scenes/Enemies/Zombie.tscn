@@ -57,6 +57,7 @@ animations = [ {
 collision_layer = 2
 collision_mask = 5
 script = ExtResource( 25 )
+point_de_vie = 10
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -66,5 +67,5 @@ position = Vector2( 0.273002, -2.09712 )
 scale = Vector2( 0.930832, 1.00746 )
 frames = SubResource( 2 )
 animation = "Droite"
-frame = 5
+frame = 3
 playing = true

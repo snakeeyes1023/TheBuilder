@@ -100,17 +100,13 @@ animations = [ {
 "loop": true,
 "name": "Bas",
 "speed": 20.0
-}, {
-"frames": [ ExtResource( 22 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 6 ) ],
-"loop": true,
-"name": "Gauche",
-"speed": 20.0
 } ]
 
 [node name="Sorciere" type="KinematicBody2D"]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource( 25 )
+point_de_vie = 50
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -120,7 +116,7 @@ position = Vector2( -0.0197158, -0.775525 )
 scale = Vector2( 0.0600541, 0.0796936 )
 frames = SubResource( 2 )
 animation = "Bas"
-frame = 16
+frame = 23
 playing = true
 
 [node name="Spawner" type="Position2D" parent="."]

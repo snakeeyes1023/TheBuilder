@@ -6,10 +6,11 @@ var animation = "Bas"
 var animation_en_cours = true
 var cible = "Jeu/Personnage"
 var cible_en_poursuite = true
-
+var max_point_vie = 0
 #intialisation des information de l'enemie par la classe enfant
 func _init(_vitesse = 0, _point_de_vie = 0, _cible = null).():
 	enemie_vitesse = _vitesse
+	max_point_vie = _point_de_vie
 	enemie_point_de_vie = _point_de_vie
 	if _cible != null:
 		cible = _cible
@@ -64,6 +65,7 @@ func hit(degat):
 		mort()
 
 func mort():
+	InformationJeu.ajouter_argent(max_point_vie*15)
 	queue_free()
 
 
