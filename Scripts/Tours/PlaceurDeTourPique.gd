@@ -25,7 +25,7 @@ func _physics_process(_delta):
 
 
 func _on_Area2D_area_entered(area):
-	if(area.name != "zoneDeDetection"):
+	if(area.name != "zoneDeDetection" && area.name != "Lazer"):
 		place_libre += 1
 
 

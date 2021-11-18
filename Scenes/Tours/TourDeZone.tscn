@@ -5,9 +5,6 @@
 [ext_resource path="res://Ressources/Asset/Tours/lazer.png" type="Texture" id=3]
 [ext_resource path="res://Ressources/Asset/Tours/carre-gris-fond-transparent.png" type="Texture" id=4]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 263.293, 260.687 )
-
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 3 )
@@ -74,6 +71,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 214.572, 23.5757 )
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 263.293, 260.687 )
+
 [node name="TourZone" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -83,18 +83,12 @@ texture = ExtResource( 2 )
 
 [node name="Reload" type="Timer" parent="."]
 
-[node name="BaseDetour" type="KinematicBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseDetour"]
-position = Vector2( 0.206299, 0 )
-scale = Vector2( 0.1, 0.1 )
-shape = SubResource( 1 )
-
 [node name="Lazer" type="AnimatedSprite" parent="."]
 position = Vector2( -0.461274, 0.00399148 )
 scale = Vector2( 0.809605, 0.368413 )
+z_index = 1
 frames = SubResource( 13 )
-frame = 3
+frame = 8
 playing = true
 
 [node name="carre-gris-fond-transparent" type="Sprite" parent="Lazer"]
@@ -106,7 +100,14 @@ texture = ExtResource( 4 )
 collision_layer = 4
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lazer/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lazer/Lazer"]
 shape = SubResource( 14 )
 
-[connection signal="body_entered" from="Lazer/Area2D" to="." method="_on_Area2D_body_entered"]
+[node name="BaseDetour" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseDetour"]
+position = Vector2( 0.206299, 0 )
+scale = Vector2( 0.1, 0.1 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Lazer/Lazer" to="." method="_on_Area2D_body_entered"]
