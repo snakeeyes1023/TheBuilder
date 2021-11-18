@@ -16,7 +16,7 @@ func _physics_process(_delta):
 	else:
 		$towerTest1.modulate = Color(0.0, 1.0, 0.0, 0.5)
 	if Input.is_action_just_pressed("click_gauche") and !(place_libre > 0):
-		get_parent().get_node("Market").changer_argent(-price)
+		InformationJeu.ajouter_argent(-price)
 		queue_free()
 		var instance = TourDeBase.instance()
 		instance.position = position

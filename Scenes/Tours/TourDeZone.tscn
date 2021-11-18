@@ -96,7 +96,9 @@ position = Vector2( 0.835552, 2.86127 )
 scale = Vector2( 0.0487215, 0.0790721 )
 texture = ExtResource( 4 )
 
-[node name="Lazer" type="Area2D" parent="Lazer"]
+[node name="Area2D" type="Area2D" parent="Lazer"]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lazer/Lazer"]
 shape = SubResource( 14 )

@@ -17,7 +17,6 @@ func _physics_process(delta):
 	if attaque_en_cours:
 		if len(tour_a_porter) == 0 && etape_animation < 9:
 			tour_disparu()
-			print("test tour disparu")
 			return
 		attaquer()
 		return
@@ -41,7 +40,6 @@ func attaquer():
 			explosion()
 		
 		if etape_animation >= 10:
-			print("je SUIS MORTTTTTT")
 			self.mort()
 
 
@@ -55,7 +53,11 @@ func explosion():
 	
 	for i in len(tour_a_porter):
 		var body = tour_a_porter[i]
-		body.get_parent().hit(40)
+		if !body:
+			return
+			
+		if body.get_parent() != null && body.has_method("hit"):
+			body.get_parent().hit(40)
 	attaque_en_cours = true
 
 #limite la fréquence de tire du vaisseau	
