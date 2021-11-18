@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Menu/PauseMenu.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.254902, 0.203922, 0.00784314, 0.588235 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.184314, 0.172549, 0.172549, 0.862745 )
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Pause" type="Control"]
 pause_mode = 2
@@ -12,6 +25,18 @@ margin_top = 0.576813
 margin_right = -0.47998
 margin_bottom = 0.576782
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.500357
+anchor_right = 0.500357
+margin_left = -250.513
+margin_top = 163.3
+margin_right = 249.487
+margin_bottom = 466.3
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

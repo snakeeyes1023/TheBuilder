@@ -37,7 +37,6 @@ func recherche_tour():
 func attaquer():
 	if limite_vitesse_attaque():
 		etape_animation += 1
-		print("bomber attaque")
 		if etape_animation == 9:
 			explosion()
 		

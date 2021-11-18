@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/Enemies/Sorciere.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Enemies/Bomber.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Ressources/musicEtSons/spaceship shooter .mp3" type="AudioStream" id=8]
+[ext_resource path="res://Scenes/Menu/Tuto.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 64, 0, 64 )
@@ -88,6 +89,12 @@ tile_data = PoolIntArray( -327683, 1, 0, -327682, 1, 1, -327681, 1, 1, -393216, 
 
 [node name="Pause" parent="." instance=ExtResource( 3 )]
 visible = false
+anchor_right = 0.00105143
+anchor_bottom = 0.0
+margin_left = -8.0
+margin_top = 1.0
+margin_right = 1052.0
+margin_bottom = 602.0
 
 [node name="Zombie" parent="." instance=ExtResource( 5 )]
 
@@ -103,3 +110,11 @@ position = Vector2( 959.705, 416.433 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 autoplay = true
+
+[node name="Control" parent="." instance=ExtResource( 9 )]
+anchor_right = 0.000357389
+anchor_bottom = 0.000609996
+margin_left = 3.0
+margin_top = -63.0
+margin_right = 1030.0
+margin_bottom = 487.0
