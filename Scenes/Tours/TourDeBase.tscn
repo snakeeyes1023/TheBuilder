@@ -67,7 +67,7 @@ texture = ExtResource( 2 )
 
 [node name="BaseDetour" type="KinematicBody2D" parent="."]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseDetour"]
 position = Vector2( 0.206299, 0 )

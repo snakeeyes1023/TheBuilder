@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 8.29997
 
-[node name="Node2D" type="KinematicBody2D"]
+[node name="Balle" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -14,7 +14,7 @@ position = Vector2( 0, 2.38419e-07 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -0.144027, -1.45939 )
-scale = Vector2( 0.031, 0.285 )
+position = Vector2( -0.379993, 0.782316 )
+scale = Vector2( 0.031, 0.0471879 )
 texture = ExtResource( 1 )
 vframes = 11

@@ -1,6 +1,6 @@
 extends Node2D
 
-export var reloadTime = 0.5
+export var reloadTime = 0.2
 var recharge = false
 var Balle = preload("res://Scenes/Tours/Balle.tscn")
 export var point_de_vie = 10
@@ -21,7 +21,6 @@ func _on_Reload_timeout():
 
 
 func shoot():
-	print("SHOTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT")
 	var b = Balle.instance()
 	b.start($Canon/canon.global_position, $Canon.rotation - 1.57)
 	get_parent().add_child(b)
