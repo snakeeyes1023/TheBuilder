@@ -52,7 +52,6 @@ func explosion():
 	var tour_attaquer = self.get_current_cible()
 	if tour_attaquer.has_method("hit"):
 		tour_attaquer.hit(40)
-		
 
 #limite la fréquence de tire du vaisseau	
 func limite_vitesse_attaque():
