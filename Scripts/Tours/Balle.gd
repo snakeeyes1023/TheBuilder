@@ -17,6 +17,7 @@ func _physics_process(delta):
 			collision.collider.hit(degat)
 			destroy()
 
+
 func destroy():
 	queue_free()
 

@@ -1,5 +1,5 @@
 extends "res://Scripts/Enemies/EnemieBase.gd"
-
+var derniere_position = null
 export (int) var point_de_vie = 10
 export (int) var vitesse = 50
 export (int) var frequence_attaque = 500
@@ -7,16 +7,16 @@ var derniere_attaque = OS.get_ticks_msec()
 var attaque_en_cours = false
 var etape_animation = 0
 var tour_a_porter = []
-var tour = ["Jeu/TourBase", "Jeu/TourZone"]
+var tour = ["niveau/Jeu/TourBase", "niveau/Jeu/TourZone"]
 
-func _init().(vitesse, point_de_vie, "Jeu/Tour"):
+func _init().(vitesse, point_de_vie, "niveau/Jeu/Tour"):
 	pass
 
 
 func _physics_process(delta):
+	verifier_attaque_en_cours()
 	if attaque_en_cours:
-		if len(tour_a_porter) == 0 && etape_animation < 9:
-			tour_disparu()
+		if etape_animation < 9:
 			return
 		attaquer()
 		return
@@ -44,21 +44,15 @@ func attaquer():
 
 
 
-# Fait exploser le monstre et par le fait même éffectue
-# des dommages aux tours avoisinantes
+# Fait exploser le monstre
 func explosion():
 	$Explosion.visible = true
 	$Explosion.playing = true
 	$SonExplosion.play()
-	
-	for i in len(tour_a_porter):
-		var body = tour_a_porter[i]
-		if !body:
-			return
-			
-		if body.get_parent() != null && body.has_method("hit"):
-			body.get_parent().hit(40)
-	attaque_en_cours = true
+	var tour_attaquer = self.get_current_cible()
+	if tour_attaquer.has_method("hit"):
+		tour_attaquer.hit(40)
+		
 
 #limite la fréquence de tire du vaisseau	
 func limite_vitesse_attaque():
@@ -68,14 +62,19 @@ func limite_vitesse_attaque():
 	derniere_attaque = OS.get_ticks_msec()	
 	return true	
 
+func verifier_attaque_en_cours():
+	if derniere_position == null:
+		derniere_position = get_position()
+		
+		return
+	var actuelle_position = get_position()
 
-func _on_DistanceAttaque_body_shape_entered(body_id, body, body_shape, local_shape):
-	attaque_en_cours = true
-	tour_a_porter.append(body)
-	self.animation_en_cours = false
+	if derniere_position == actuelle_position:
+		attaque_en_cours = true
+		self.animation_en_cours = false
+		return
+		
+	derniere_position = get_position()
 
-
-func tour_disparu():
-	etape_animation = 0
-	attaque_en_cours = false
-	self.animation_en_cours = true
+func get_position():
+	return position

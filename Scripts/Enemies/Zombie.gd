@@ -28,6 +28,5 @@ func limiter_attaque():
 
 func attaquer_personnage():
 	if limiter_attaque():
-		print("À L'attaque !")
-		var _player = get_tree().get_root().get_node("Jeu/Personnage")
+		var _player = get_tree().get_root().get_node("niveau/Jeu/Personnage")
 		_player.hit(2)	
