@@ -116,7 +116,7 @@ position = Vector2( -0.0197158, -0.775525 )
 scale = Vector2( 0.0600541, 0.0796936 )
 frames = SubResource( 2 )
 animation = "Bas"
-frame = 23
+frame = 26
 playing = true
 
 [node name="Spawner" type="Position2D" parent="."]
