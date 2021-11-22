@@ -7,7 +7,7 @@ var wClick = false
 var tutoTouchDone = false
 var tutoTourPlacerDone = false
 
-var tour = ["Dictatielle/Jeu/TourBase", "Dictatielle/Jeu/TourZone"]
+var tour = ["Jeu/TourBase", "Jeu/TourZone"]
 
 func _process(delta):
 	if !tutoTouchDone:		
