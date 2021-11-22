@@ -19,7 +19,6 @@ func _physics_process(delta):
 		elif "mur" in collision.collider.name:
 			destroy()
 
-
 func destroy():
 	queue_free()
 

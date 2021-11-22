@@ -59,7 +59,7 @@ func attaquer_personnage():
 		
 		instance_zombie.start(position_depart)
 		
-		get_tree().get_root().get_node("niveau/Jeu").add_child(instance_zombie)
+		get_tree().get_root().get_node("Jeu").add_child(instance_zombie)
 		enemie_apparu += 1
 
 

@@ -32,5 +32,6 @@ func afficher_information_general():
 
 
 func Supp_balle(body):
+	print(body.name)
 	if body.name == "Balle":
 		body.queue_free()

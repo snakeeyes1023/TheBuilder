@@ -4,7 +4,7 @@ var enemie_vitesse = 100
 var enemie_point_de_vie = 1
 var animation = "Bas"
 var animation_en_cours = true
-var cible = "niveau/Jeu/Personnage"
+var cible = "Jeu/Personnage"
 var cible_en_poursuite = true
 var max_point_vie = 0
 #intialisation des information de l'enemie par la classe enfant
@@ -20,7 +20,7 @@ func _init(_vitesse = 0, _point_de_vie = 0, _cible = null).():
 #Retourne Si une collision avec le personnage est detectée
 func mouvement():
 	#Obtenir la position de la cible
-	var _player = get_current_cible()
+	var _player = get_tree().get_root().get_node(cible)
 	#Si le personnage existe
 	if _player:	
 		if animation_en_cours != $Animation.playing:
@@ -57,7 +57,7 @@ func obtenir_collision():
 #position de départ de l'ennemie
 func start(pos):
 	self.position = pos
-	
+
 
 func hit(degat):
 	enemie_point_de_vie -= degat
@@ -68,6 +68,4 @@ func mort():
 	InformationJeu.ajouter_argent(max_point_vie*15)
 	queue_free()
 
-func get_current_cible():
-	return get_tree().get_root().get_node(cible)
 
