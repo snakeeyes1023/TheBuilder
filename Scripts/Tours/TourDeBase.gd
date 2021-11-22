@@ -9,8 +9,6 @@ export var point_de_vie = 10
 func _physics_process(_delta):
 
 	if !recharge && $Canon/RayCast2D.is_colliding():
-		print($Canon/RayCast2D.get_collider().name)
-		print( $Canon.rotation)
 		shoot()
 	else:
 		$Canon.rotation += 0.05
@@ -30,7 +28,6 @@ func shoot():
 	$Reload.set_wait_time(reloadTime)
 
 func hit(degat):
-	print("je suis ici")
 	point_de_vie -= degat
 	if point_de_vie <= 0:
 		destruction()

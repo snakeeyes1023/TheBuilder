@@ -67,5 +67,5 @@ position = Vector2( 0.273002, -2.09712 )
 scale = Vector2( 0.930832, 1.00746 )
 frames = SubResource( 2 )
 animation = "Droite"
-frame = 3
+frame = 2
 playing = true
