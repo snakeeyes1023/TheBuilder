@@ -15,6 +15,8 @@ func _process(delta):
 	if !tutoTourPlacerDone:		
 		tuto_des_tours()
 	else:
+		InformationJeu.reinitialiser_vie()
+		get_tree().change_scene("res://Scenes/Niveaux/niveau-1.tscn")
 		queue_free()
 
 func tuto_des_tours():

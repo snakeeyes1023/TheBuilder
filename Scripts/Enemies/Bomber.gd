@@ -14,7 +14,8 @@ func _init().(vitesse, point_de_vie, "niveau/Jeu/Tour"):
 
 
 func _physics_process(delta):
-	verifier_attaque_en_cours()
+	self.mouvement()
+	#verifier_attaque_en_cours()
 	if attaque_en_cours:
 		if etape_animation < 9:
 			return
