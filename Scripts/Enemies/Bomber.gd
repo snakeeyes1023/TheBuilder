@@ -1,12 +1,13 @@
 extends "res://Scripts/Enemies/EnemieBase.gd"
-var derniere_position = null
+
 export (int) var point_de_vie = 10
 export (int) var vitesse = 50
 export (int) var frequence_attaque = 500
 var derniere_attaque = OS.get_ticks_msec()
 var attaque_en_cours = false
 var etape_animation = 0
-var tour_a_porter = []
+var explosion = false
+var seconde_explosion = null
 var tour = ["niveau/Jeu/TourBase", "niveau/Jeu/TourZone"]
 
 func _init().(vitesse, point_de_vie, "niveau/Jeu/Tour"):
@@ -14,13 +15,15 @@ func _init().(vitesse, point_de_vie, "niveau/Jeu/Tour"):
 
 
 func _physics_process(delta):
-	self.mouvement()
-	#verifier_attaque_en_cours()
+	verifier_disparition()	
 	if attaque_en_cours:
-		if etape_animation < 9:
+		if etape_animation == 9:
 			return
 		attaquer()
 		return
+	else:
+		verifier_attaque_en_cours()
+		self.mouvement()
 	#Déplacement du personnage lorsque qu'aucune attaque est en cours
 	recherche_tour()
 
@@ -39,10 +42,8 @@ func attaquer():
 		etape_animation += 1
 		if etape_animation == 9:
 			explosion()
-		
-		if etape_animation >= 10:
-			self.mort()
-
+			explosion = true
+			seconde_explosion = OS.get_ticks_msec()
 
 
 # Fait exploser le monstre
@@ -53,7 +54,8 @@ func explosion():
 	var tour_attaquer = self.get_current_cible()
 	if tour_attaquer.has_method("hit"):
 		tour_attaquer.hit(40)
-		
+
+
 
 #limite la fréquence de tire du vaisseau	
 func limite_vitesse_attaque():
@@ -63,19 +65,15 @@ func limite_vitesse_attaque():
 	derniere_attaque = OS.get_ticks_msec()	
 	return true	
 
+
 func verifier_attaque_en_cours():
-	if derniere_position == null:
-		derniere_position = get_position()
-		
-		return
-	var actuelle_position = get_position()
-
-	if derniere_position == actuelle_position:
+	if !self.mouvement_en_cours:
 		attaque_en_cours = true
-		self.animation_en_cours = false
-		return
-		
-	derniere_position = get_position()
 
-func get_position():
-	return position
+
+func verifier_disparition():
+	if !explosion:
+		return
+	var difference_temp = OS.get_ticks_msec() - seconde_explosion
+	if difference_temp <= 900:
+		self.mort()
