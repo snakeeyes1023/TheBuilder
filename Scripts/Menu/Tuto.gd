@@ -6,18 +6,23 @@ var sClick = false
 var wClick = false
 var tutoTouchDone = false
 var tutoTourPlacerDone = false
-
+var enemieMort = false
 var tour = ["Dictatielle/Jeu/TourBase", "Dictatielle/Jeu/TourZone"]
+var zombie_liste = ["Dictatielle/Jeu/Tuto/Zombie", "Dictatielle/Jeu/Tuto/Zombie2", "Dictatielle/Jeu/Tuto/Zombie3"]
 
 func _process(delta):
-	if !tutoTouchDone:		
+	if !tutoTouchDone:	
+		zombie_pause(true)	
 		tuto_des_touches()
 	if !tutoTourPlacerDone:		
 		tuto_des_tours()
-	else:
+		
+	verifier_presence_ennemie()
+	if enemieMort:
 		InformationJeu.reinitialiser_vie()
-		get_tree().change_scene("res://Scenes/Niveaux/niveau-1.tscn")
+		get_tree().change_scene("res://Scenes/Menu/MenuChoixDeNiveau.tscn")
 		queue_free()
+
 
 func tuto_des_tours():
 	var cible = tour[randi() % tour.size()]
@@ -25,8 +30,26 @@ func tuto_des_tours():
 	
 	if tour_trouver != null && tour_trouver:
 		tutoTourPlacerDone = true
+		$TourExplication.visible = false
+		$Panel.visible = false
+		zombie_pause(false)
 
-	
+
+func zombie_pause(val):
+	$Zombie.pause = val
+	$Zombie2.pause = val
+	$Zombie3.pause = val
+	$Zombie.modifier_cible("Dictatielle/Jeu/Personnage")
+	$Zombie2.modifier_cible("Dictatielle/Jeu/Personnage")
+	$Zombie3.modifier_cible("Dictatielle/Jeu/Personnage")
+
+func verifier_presence_ennemie():
+	for z in zombie_liste:
+		var zombie_trouver = get_tree().get_root().get_node_or_null(z)	
+		if zombie_trouver != null:
+			return
+	enemieMort = true
+
 func tuto_des_touches():
 	if Input.is_action_pressed("right"):
 		$d.modulate = Color(0.0, 1.0, 0.0, 0.8)

@@ -4,9 +4,9 @@ var liste_enemie = [preload("res://Scenes/Enemies/Bomber.tscn"), preload("res://
 #fréquence d'appartion d'ennemie
 var frequence = 2000
 #durée de la manche
-var duree = 20000
+var duree = 60000
 #scene du prochain niveau
-var prochain_niveau = "res://Scenes/Niveaux/niveau-2.tscn"
+var prochain_niveau = "res://Scenes/Menu/MenuChoixDeNiveau.tscn"
 
 func _init().(liste_enemie, duree, frequence, prochain_niveau):
 	pass

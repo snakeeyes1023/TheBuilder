@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Ressources/Asset/tuto/Keyboard keys (transparent).png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Menu/Tuto.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Enemies/Zombie.tscn" type="PackedScene" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.254902, 0.203922, 0.00784314, 0.588235 )
@@ -94,3 +95,12 @@ text = "Vous devez survivre face aux hordes d'ennemis. Le meilleur moyen d'y arr
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Zombie" parent="." instance=ExtResource( 3 )]
+position = Vector2( 65.7198, 248.434 )
+
+[node name="Zombie3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 59.2505, 421.069 )
+
+[node name="Zombie2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 60.3056, 317.013 )

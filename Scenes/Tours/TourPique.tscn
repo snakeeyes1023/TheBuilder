@@ -8,6 +8,7 @@
 extents = Vector2( 263.293, 260.687 )
 
 [node name="TourPique" type="Node2D"]
+z_index = -1
 script = ExtResource( 3 )
 
 [node name="towerTest1" type="Sprite" parent="."]

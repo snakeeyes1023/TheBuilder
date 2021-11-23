@@ -85,6 +85,7 @@ extents = Vector2( 10, 248 )
 [node name="Jeu" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+z_index = -1
 tile_set = SubResource( 2 )
 cell_size = Vector2( 32, 32 )
 format = 1
