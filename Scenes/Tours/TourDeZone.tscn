@@ -88,7 +88,7 @@ position = Vector2( -0.461274, 0.00399148 )
 scale = Vector2( 0.809605, 0.368413 )
 z_index = 1
 frames = SubResource( 12 )
-frame = 5
+frame = 3
 playing = true
 
 [node name="carre-gris-fond-transparent" type="Sprite" parent="Lazer"]

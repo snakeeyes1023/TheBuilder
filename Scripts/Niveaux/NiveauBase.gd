@@ -14,8 +14,10 @@ func _init(liste_enemie,duree,frequence, prochain_niveau).():
 	_frequence = frequence
 	_prochain_niveau = prochain_niveau
 
-
+#faire apparaître un nouvel ennemie
 func spawner():
+	
+	# vérification que le niveau est terminé
 	verifier_fin_niveau()
 	if niveau_termine:
 		return
@@ -31,7 +33,7 @@ func limiter_apparition():
 	derniere_attaque = OS.get_ticks_msec()	
 	return true	
 
-
+# vérification que le niveau est terminé
 func verifier_fin_niveau():
 	if InformationJeu.niveau_termine_global == true:
 		InformationJeu.niveau_termine_global = false
@@ -43,6 +45,7 @@ func verifier_fin_niveau():
 		niveau_termine = true
 		InformationJeu.niveau_termine_global = true
 
+#Initialisation d'un nouvelle ennemie random à une position random
 func attaquer():
 	var enemie = obtenir_ennemie_random()
 	var position = obtenir_position_spawner()
@@ -50,7 +53,7 @@ func attaquer():
 	b.start(position)
 	get_parent().add_child(b)
 	
-	
+#obtenir un spawner random
 func obtenir_position_spawner():
 	randomize()
 	var spawner_random = randi()%3
@@ -63,7 +66,7 @@ func obtenir_position_spawner():
 		return $Jeu/Spawner/curseur3.global_position
 	return $Jeu/Spawner/curseur4.global_position
 
-
+#obtenir un ennemie random
 func obtenir_ennemie_random():
 	randomize()
 	return _liste_enemie[randi() % _liste_enemie.size()]

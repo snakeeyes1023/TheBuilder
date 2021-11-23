@@ -1,8 +1,11 @@
 extends "res://Scripts/Niveaux/NiveauBase.gd"
-
+#liste d'ennemie pouvant apparaître
 var liste_enemie = [preload("res://Scenes/Enemies/Bomber.tscn"), preload("res://Scenes/Enemies/Zombie.tscn")]
+#fréquence d'appartion d'ennemie
 var frequence = 2000
+#durée de la manche
 var duree = 20000
+#scene du prochain niveau
 var prochain_niveau = "res://Scenes/Niveaux/niveau-2.tscn"
 
 func _init().(liste_enemie, duree, frequence, prochain_niveau):

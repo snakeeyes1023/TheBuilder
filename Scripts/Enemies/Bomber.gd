@@ -3,19 +3,22 @@ extends "res://Scripts/Enemies/EnemieBase.gd"
 export (int) var point_de_vie = 10
 export (int) var vitesse = 50
 export (int) var frequence_attaque = 500
+
 var derniere_attaque = OS.get_ticks_msec()
 var attaque_en_cours = false
 var etape_animation = 0
 var explosion = false
 var seconde_explosion = null
+#tour que le bomber peut attaquer
 var tour = ["niveau/Jeu/TourBase", "niveau/Jeu/TourZone"]
+
 
 func _init().(vitesse, point_de_vie, "niveau/Jeu/Tour"):
 	pass
 
 
 func _physics_process(delta):
-	verifier_disparition()	
+	delai_animation_explosion()	
 	if attaque_en_cours:
 		if etape_animation == 9:
 			return
@@ -28,6 +31,7 @@ func _physics_process(delta):
 	recherche_tour()
 
 
+#Cours vers la tour et s'il na pas d'enemie targetter en cherche un nouveau
 func recherche_tour():
 	self.mouvement()
 	$Explosion.playing = false
@@ -36,7 +40,7 @@ func recherche_tour():
 	if !self.cible_en_poursuite:
 		self.cible = tour[randi() % tour.size()]
 
-
+#Animation d'attaque lorsque terminer elle déclenche explosion
 func attaquer():
 	if limite_vitesse_attaque():
 		etape_animation += 1
@@ -67,12 +71,14 @@ func limite_vitesse_attaque():
 	return true	
 
 
+#vérifier si une attaque est en cours pour éviter les mouvements
 func verifier_attaque_en_cours():
 	if !self.mouvement_en_cours:
 		attaque_en_cours = true
 
 
-func verifier_disparition():
+#laisse le temps à l'animation d'être exécuter au complet
+func delai_animation_explosion():
 	if !explosion:
 		return
 	var difference_temp = OS.get_ticks_msec() - seconde_explosion

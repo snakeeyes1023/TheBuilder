@@ -29,7 +29,7 @@ func _physics_process(delta):
 	self.mouvement()
 
 
-#limite la fréquence de tire du vaisseau	
+#limite la fréquence d'attaque	
 func limiter_attaque():
 	var difference_temp = OS.get_ticks_msec() - derniere_attaque
 	if difference_temp <= frequence_attaque:
@@ -37,7 +37,7 @@ func limiter_attaque():
 	derniere_attaque = OS.get_ticks_msec()	
 	return true	
 
-
+#Limiter le nombre d'apparition par seconde
 func limiter_apparition():
 	var difference_temp = OS.get_ticks_msec() - derniere_apparition
 	if difference_temp <= frequence_apparition:
@@ -46,7 +46,9 @@ func limiter_apparition():
 	return true	
 
 
+#attaque le personnage (L'attaque de la sorcière est de faire apparaître des ennemies)
 func attaquer_personnage():
+	#Stopper l'attaque si tous les ennemies sont apparu
 	if enemie_apparu >= 4:
 		attaque_en_cours = false
 		derniere_attaque = OS.get_ticks_msec()
@@ -54,6 +56,7 @@ func attaquer_personnage():
 		return
 		
 	if limiter_apparition():
+		#apparrition d'un zombie
 		var instance_zombie = zombie.instance()
 		var position_depart = obtenir_position_spawner()
 		

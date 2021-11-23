@@ -1,8 +1,11 @@
 extends "res://Scripts/Niveaux/NiveauBase.gd"
-
+#liste d'ennemie pouvant apparaître
 var liste_enemie = [preload("res://Scenes/Enemies/Sorciere.tscn"), preload("res://Scenes/Enemies/Zombie.tscn"), preload("res://Scenes/Enemies/Bomber.tscn")]
+#fréquence d'appartion d'ennemie
 var frequence = 2000
+#durée de la manche
 var duree = 30000
+#scene du prochain niveau
 var prochain_niveau = "res://Scenes/Menu/MenuPrincipale.tscn"
 
 

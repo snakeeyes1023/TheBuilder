@@ -26,6 +26,7 @@ func limiter_attaque():
 	return true
 
 
+#attaquer le personnage ciblé
 func attaquer_personnage():
 	if limiter_attaque():
 		var _player = get_tree().get_root().get_node("niveau/Jeu/Personnage")
