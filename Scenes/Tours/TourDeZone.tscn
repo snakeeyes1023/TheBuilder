@@ -88,10 +88,10 @@ position = Vector2( -0.461274, 0.00399148 )
 scale = Vector2( 0.809605, 0.368413 )
 z_index = 1
 frames = SubResource( 12 )
+frame = 1
 playing = true
 
 [node name="carre-gris-fond-transparent" type="Sprite" parent="Lazer"]
-visible = false
 position = Vector2( 0.835552, 2.86127 )
 scale = Vector2( 0.0487215, 0.0790721 )
 texture = ExtResource( 4 )
@@ -105,10 +105,10 @@ z_index = 1
 shape = SubResource( 13 )
 
 [node name="BaseDetour" type="KinematicBody2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BaseDetour"]
-visible = false
 position = Vector2( 0.206299, 0 )
 scale = Vector2( 0.1, 0.1 )
 shape = SubResource( 14 )
+
+[connection signal="body_entered" from="Lazer/Lazer" to="." method="_on_Lazer_body_entered"]

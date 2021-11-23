@@ -15,9 +15,7 @@ func _physics_process(delta):
 	if collision:
 		if collision.collider.has_method("hit"):
 			collision.collider.hit(degat)
-			destroy()
-		elif "mur" in collision.collider.name:
-			destroy()
+		destroy()
 
 
 
