@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Personnage/Personnage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Tours/market.tscn" type="PackedScene" id=2]
@@ -77,10 +77,10 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 64, 0, 64 )
 2/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 9.0536, 296.587 )
+extents = Vector2( 543.216, 5.1286 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 518.28, 9.80035 )
+extents = Vector2( 10, 248 )
 
 [node name="Jeu" type="Node2D"]
 
@@ -106,4 +106,27 @@ position = Vector2( 496.389, 94.7523 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-autoplay = true
+
+[node name="mur1" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mur1"]
+position = Vector2( 508.117, -8 )
+shape = SubResource( 3 )
+
+[node name="mur2" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mur2"]
+position = Vector2( 511.117, 491 )
+shape = SubResource( 3 )
+
+[node name="mur3" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mur3"]
+position = Vector2( -10, 242 )
+shape = SubResource( 4 )
+
+[node name="mur4" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mur4"]
+position = Vector2( 1037.32, 235.092 )
+shape = SubResource( 4 )

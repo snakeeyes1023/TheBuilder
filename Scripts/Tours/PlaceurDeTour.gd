@@ -24,6 +24,8 @@ func _physics_process(_delta):
 		TourDeBase.instance()
 
 
+
+
 func _on_Area2D_area_entered(area):
 	if(area.name != "zoneDeDetection" && area.name != "Lazer"):
 		place_libre += 1
