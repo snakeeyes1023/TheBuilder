@@ -36,8 +36,7 @@ func verifier_fin_niveau():
 	var difference_temp = OS.get_ticks_msec() - debut_attaque
 	if difference_temp > _duree:
 		prochain_niveau()
-
-
+    
 func attaquer():
 	var enemie = obtenir_ennemie_random()
 	var position = obtenir_position_spawner()
