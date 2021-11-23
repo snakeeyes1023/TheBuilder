@@ -107,35 +107,3 @@ position = Vector2( 496.389, 94.7523 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 autoplay = true
-
-[node name="Control" parent="." instance=ExtResource( 9 )]
-anchor_right = 0.000357389
-anchor_bottom = 0.000609996
-margin_left = 12.8995
-margin_top = -55.929
-margin_right = 1039.9
-margin_bottom = 494.071
-
-[node name="mur4" type="KinematicBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mur4"]
-position = Vector2( -8.42505, 276.648 )
-shape = SubResource( 3 )
-
-[node name="mur3" type="KinematicBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mur3"]
-position = Vector2( 1031.81, 271.91 )
-shape = SubResource( 3 )
-
-[node name="mur" type="KinematicBody2D" parent="."]
-
-[node name="mur" type="CollisionShape2D" parent="mur"]
-position = Vector2( 514.375, -8.9061 )
-shape = SubResource( 4 )
-
-[node name="mur2" type="KinematicBody2D" parent="."]
-
-[node name="mur" type="CollisionShape2D" parent="mur2"]
-position = Vector2( 516.093, 500.492 )
-shape = SubResource( 4 )

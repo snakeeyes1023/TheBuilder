@@ -58,8 +58,10 @@ func attaquer_personnage():
 		var position_depart = obtenir_position_spawner()
 		
 		instance_zombie.start(position_depart)
-		
-		get_tree().get_root().get_node("niveau/Jeu").add_child(instance_zombie)
+		if get_tree().get_root().get_node("niveau/Jeu") != null:
+			get_tree().get_root().get_node("niveau/Jeu").add_child(instance_zombie)
+		else:
+			queue_free()	
 		enemie_apparu += 1
 
 

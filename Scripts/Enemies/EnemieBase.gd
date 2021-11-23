@@ -28,6 +28,7 @@ func mouvement():
 			
 		#calcule de la trajectoire à utiliser
 		var player_direction = _player.position - self.position
+		print(player_direction)
 		animate_deplacement(player_direction)
 		move_and_slide(enemie_vitesse * player_direction.normalized())	
 		cible_en_poursuite = true

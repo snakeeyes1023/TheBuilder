@@ -1,4 +1,4 @@
-extends Node2D
+extends KinematicBody2D
 
 var Placeur_de_tourBase = preload("res://Scenes/Tours/PlaceurDeTourBase.tscn")
 var Placeur_de_tourZone = preload("res://Scenes/Tours/PlaceurDeTourZone.tscn")

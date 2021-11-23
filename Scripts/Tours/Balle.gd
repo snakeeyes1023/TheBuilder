@@ -20,6 +20,7 @@ func _physics_process(delta):
 			destroy()
 
 
+
 func destroy():
 	queue_free()
 
