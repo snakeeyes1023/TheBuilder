@@ -52,8 +52,9 @@ func explosion():
 	$Explosion.playing = true
 	$SonExplosion.play()
 	var tour_attaquer = self.get_current_cible()
-	if tour_attaquer.has_method("hit"):
-		tour_attaquer.hit(40)
+	if	tour_attaquer != null:		
+		if tour_attaquer.has_method("hit"):
+			tour_attaquer.hit(40)
 
 
 
