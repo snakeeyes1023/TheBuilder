@@ -3,25 +3,25 @@ extends Node
 var _liste_enemie = null
 var _duree = 40000
 var _frequence = 1500
+var _prochain_niveau = ""
 var derniere_attaque = OS.get_ticks_msec()
 var debut_attaque = OS.get_ticks_msec()
-var _prochain_niveau = "res://Scenes/Menu/MenuPrincipale.tscn"
+var niveau_termine = false
 
-
-func _init(liste_enemie,duree,frequence, prochain_niveau = null).():
+func _init(liste_enemie,duree,frequence, prochain_niveau).():
 	_liste_enemie = liste_enemie
 	_duree = duree
 	_frequence = frequence
-	if prochain_niveau != null:
-		_prochain_niveau = prochain_niveau
+	_prochain_niveau = prochain_niveau
 
 
-func _physics_process(_delta):
+func spawner():
 	verifier_fin_niveau()
+	if niveau_termine:
+		return
 	
 	if limiter_apparition():
 		attaquer()
-	
 	
 #limite la fréquence de tire du vaisseau	
 func limiter_apparition():
@@ -33,10 +33,15 @@ func limiter_apparition():
 
 
 func verifier_fin_niveau():
+	if InformationJeu.niveau_termine_global == true:
+		InformationJeu.niveau_termine_global = false
+		queue_free()
+		get_tree().change_scene(_prochain_niveau)
+		return
 	var difference_temp = OS.get_ticks_msec() - debut_attaque
 	if difference_temp > _duree:
-		prochain_niveau()
-
+		niveau_termine = true
+		InformationJeu.niveau_termine_global = true
 
 func attaquer():
 	var enemie = obtenir_ennemie_random()
@@ -47,6 +52,7 @@ func attaquer():
 	
 	
 func obtenir_position_spawner():
+	randomize()
 	var spawner_random = randi()%3
 	
 	if spawner_random == 1:
@@ -55,14 +61,9 @@ func obtenir_position_spawner():
 		return $Jeu/Spawner/curseur2.global_position
 	if spawner_random == 3:
 		return $Jeu/Spawner/curseur3.global_position
-	return $Jeu/Spawner/curseur2.global_position
+	return $Jeu/Spawner/curseur4.global_position
 
 
 func obtenir_ennemie_random():
+	randomize()
 	return _liste_enemie[randi() % _liste_enemie.size()]
-
-
-func prochain_niveau():
-	InformationJeu.reinitialiser_vie()
-	get_tree().change_scene(_prochain_niveau)
-	queue_free()

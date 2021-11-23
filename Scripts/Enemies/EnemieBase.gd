@@ -8,6 +8,7 @@ var cible = "niveau/Jeu/Personnage"
 var cible_en_poursuite = true
 var max_point_vie = 0
 var mouvement_en_cours = true
+
 #intialisation des information de l'enemie par la classe enfant
 func _init(_vitesse = 0, _point_de_vie = 0, _cible = null).():
 	enemie_vitesse = _vitesse
@@ -20,6 +21,7 @@ func _init(_vitesse = 0, _point_de_vie = 0, _cible = null).():
 #Fait bouger l'enemie vers le joueur
 #Retourne Si une collision avec le personnage est detectée
 func mouvement():
+	detruction_imminente()
 	#Obtenir la position de la cible
 	var _player = get_current_cible()
 	#Si le personnage existe
@@ -37,7 +39,12 @@ func mouvement():
 		
 	else:
 		cible_en_poursuite = false
-	
+
+
+func detruction_imminente():
+	if InformationJeu.niveau_termine_global == true:
+		mort()
+
 #Animation des mouvements de l'enemie
 func animate_deplacement(direction):
 	if direction.y >= 0:
