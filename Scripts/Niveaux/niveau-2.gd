@@ -4,7 +4,7 @@ var liste_enemie = [preload("res://Scenes/Enemies/Sorciere.tscn"), preload("res:
 #fréquence d'appartion d'ennemie
 var frequence = 2000
 #durée de la manche
-var duree = 80000
+var duree = 25000
 #scene du prochain niveau
 var prochain_niveau = "res://Scenes/Menu/MenuChoixDeNiveau.tscn"
 

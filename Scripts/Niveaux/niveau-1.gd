@@ -4,7 +4,7 @@ var liste_enemie = [preload("res://Scenes/Enemies/Bomber.tscn"), preload("res://
 #fréquence d'appartion d'ennemie
 var frequence = 2000
 #durée de la manche
-var duree = 60000
+var duree = 20000
 #scene du prochain niveau
 var prochain_niveau = "res://Scenes/Menu/MenuChoixDeNiveau.tscn"
 
