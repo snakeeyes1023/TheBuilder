@@ -23,20 +23,17 @@ func _physics_process(_delta):
 		get_parent().add_child(instance)
 		TourPique.instance()
 
-
+#signal pour detection de si on peux mettre une tour
 func _on_Area2D_area_entered(area):
 	if(area.name != "zoneDeDetection" && area.name != "Lazer"):
 		place_libre += 1
-
 
 func _on_Area2D_area_exited(area):
 	if(area.name != "zoneDeDetection" && area.name != "Lazer"):
 		place_libre -= 1
 
-
 func _on_Area2D_body_entered(body):
 	place_libre += 1
-
 
 func _on_Area2D_body_exited(body):
 	place_libre -= 1

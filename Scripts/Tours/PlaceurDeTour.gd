@@ -25,22 +25,20 @@ func _physics_process(_delta):
 
 
 
-
+#signal pour detection de si on peux mettre une tour
 func _on_Area2D_area_entered(area):
 	if(area.name != "zoneDeDetection" && area.name != "Lazer"):
 		place_libre += 1
-
 
 func _on_Area2D_area_exited(area):
 	if(area.name != "zoneDeDetection" && area.name != "Lazer"):
 		place_libre -= 1
 
-
 func _on_Area2D_body_entered(body):
-	if( "mur" in body.name ):
+	if !("mur" in body.name):
 		place_libre += 1
 
-
 func _on_Area2D_body_exited(body):
-	if( "mur" in body.name ):
+	if !("mur" in body.name):
 		place_libre -= 1
+
