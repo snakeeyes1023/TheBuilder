@@ -107,6 +107,7 @@ position = Vector2( 496.389, 94.7523 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+autoplay = true
 
 [node name="mur1" type="KinematicBody2D" parent="."]
 

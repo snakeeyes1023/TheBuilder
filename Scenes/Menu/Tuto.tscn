@@ -91,7 +91,7 @@ margin_left = 321.199
 margin_top = 208.499
 margin_right = 715.199
 margin_bottom = 310.499
-text = "Vous devez survivre face aux hordes d'ennemis. Le meilleur moyen d'y arriver est de placer des tours. Cliquer sur une tour afin de la sélectionner pour ensuite la placer sur le terrain si vous avez l’argent. Attention vous ne pouvez pas poser de tour ou il en existe déjà ou trop proche d’une tour existante."
+text = "Vous devez survivre face aux hordes d'ennemis. Le meilleur moyen d'y arriver est de placer des tours. Cliquer sur une tour afin de la sélectionner pour ensuite la placer sur le terrain si vous avez l’argent. Attention vous ne pouvez pas poser de tour ou il en existe déjà ou trop proche d’une tour existante. Pouvez-vous le faire ? OUI VOUS POUVEZ !!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
