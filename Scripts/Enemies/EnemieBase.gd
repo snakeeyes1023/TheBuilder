@@ -7,6 +7,7 @@ var animation_en_cours = true
 var cible = "niveau/Jeu/Personnage"
 var cible_en_poursuite = true
 var max_point_vie = 0
+var mouvement_en_cours = true
 #intialisation des information de l'enemie par la classe enfant
 func _init(_vitesse = 0, _point_de_vie = 0, _cible = null).():
 	enemie_vitesse = _vitesse
@@ -28,7 +29,8 @@ func mouvement():
 			
 		#calcule de la trajectoire à utiliser
 		var player_direction = _player.position - self.position
-		print(player_direction)
+		verifier_mouvement_en_cours(player_direction)
+	
 		animate_deplacement(player_direction)
 		move_and_slide(enemie_vitesse * player_direction.normalized())	
 		cible_en_poursuite = true
@@ -44,6 +46,14 @@ func animate_deplacement(direction):
 		animation = "Haut"
 	#Attribution de l'animation à executer	
 	$Animation.animation = animation
+
+
+func verifier_mouvement_en_cours(p):
+	print(p)
+	if p.x < 50 && p.x > -50:
+		 mouvement_en_cours = false
+	if p.y < 1 && p.y > -1:
+		 mouvement_en_cours = false	
 
 
 #Obtenir les collisions d'un joueur

@@ -54,8 +54,8 @@ func obtenir_position_spawner():
 	if spawner_random == 2:
 		return $Jeu/Spawner/curseur2.global_position
 	if spawner_random == 3:
-		return $Jeu/Spawner/curseur3.global_position	
-	return $Jeu/Spawner/curseur4.global_position
+		return $Jeu/Spawner/curseur3.global_position
+	return $Jeu/Spawner/curseur2.global_position
 
 
 func obtenir_ennemie_random():
