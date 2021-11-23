@@ -1,6 +1,6 @@
 extends "res://Scripts/Enemies/EnemieBase.gd"
 
-export (int) var point_de_vie = 10
+export (int) var point_de_vie = 20
 export (int) var vitesse = 50
 export (int) var frequence_attaque = 500
 

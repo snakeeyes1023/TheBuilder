@@ -71,7 +71,7 @@ hframes = 8
 vframes = 4
 frame = 9
 
-[node name="DepleacementExplication" type="RichTextLabel" parent="."]
+[node name="DeplacementExplication" type="RichTextLabel" parent="."]
 anchor_left = 0.265
 anchor_top = 0.22
 anchor_right = 0.744

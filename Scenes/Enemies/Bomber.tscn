@@ -40,14 +40,14 @@ height = 0.0
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 10 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "Droite",
-"speed": 20.0
-}, {
 "frames": [ ExtResource( 25 ), ExtResource( 5 ), ExtResource( 24 ), ExtResource( 20 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "Gauche",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 10 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Droite",
 "speed": 20.0
 }, {
 "frames": [ ExtResource( 22 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 15 ), ExtResource( 7 ), ExtResource( 11 ) ],
@@ -85,7 +85,7 @@ shape = SubResource( 1 )
 scale = Vector2( 1.85355, 2.19386 )
 frames = SubResource( 2 )
 animation = "Bas"
-frame = 3
+frame = 4
 playing = true
 
 [node name="DistanceAttaque" type="Area2D" parent="."]
@@ -101,6 +101,7 @@ position = Vector2( -1.99661, 0.503365 )
 scale = Vector2( 1.1803, 1.44259 )
 frames = SubResource( 4 )
 animation = "Explosion"
+frame = 6
 playing = true
 
 [node name="SonExplosion" type="AudioStreamPlayer" parent="."]

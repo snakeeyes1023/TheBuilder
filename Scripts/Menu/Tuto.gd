@@ -7,8 +7,8 @@ var wClick = false
 var tutoTouchDone = false
 var tutoTourPlacerDone = false
 var enemieMort = false
-var tour = ["Dictatielle/Jeu/TourBase", "Dictatielle/Jeu/TourZone"]
-var zombie_liste = ["Dictatielle/Jeu/Tuto/Zombie", "Dictatielle/Jeu/Tuto/Zombie2", "Dictatielle/Jeu/Tuto/Zombie3"]
+var tour = ["Didacticiel/Jeu/TourBase", "Didacticiel/Jeu/TourZone"]
+var zombie_liste = ["Didacticiel/Jeu/Tuto/Zombie", "Didacticiel/Jeu/Tuto/Zombie2", "Didacticiel/Jeu/Tuto/Zombie3"]
 
 func _process(delta):
 	if !tutoTouchDone:	
@@ -39,9 +39,9 @@ func zombie_pause(val):
 	$Zombie.pause = val
 	$Zombie2.pause = val
 	$Zombie3.pause = val
-	$Zombie.modifier_cible("Dictatielle/Jeu/Personnage")
-	$Zombie2.modifier_cible("Dictatielle/Jeu/Personnage")
-	$Zombie3.modifier_cible("Dictatielle/Jeu/Personnage")
+	$Zombie.modifier_cible("Didacticiel/Jeu/Personnage")
+	$Zombie2.modifier_cible("Didacticiel/Jeu/Personnage")
+	$Zombie3.modifier_cible("Didacticiel/Jeu/Personnage")
 
 func verifier_presence_ennemie():
 	for z in zombie_liste:
@@ -69,5 +69,5 @@ func tuto_des_touches():
 		$d.visible = false
 		$w.visible = false
 		$s.visible = false
-		$DepleacementExplication.visible = false
+		$DeplacementExplication.visible = false
 		$TourExplication.visible = true
