@@ -1,8 +1,8 @@
 extends "res://Scripts/Niveaux/NiveauBase.gd"
 #preload("res://Scenes/Enemies/Zombie.tscn"), 
-var liste_enemie = [preload("res://Scenes/Enemies/Bomber.tscn")]
-var frequence = 10000
-var duree = 40000
+var liste_enemie = [preload("res://Scenes/Enemies/Bomber.tscn"), preload("res://Scenes/Enemies/Zombie.tscn")]
+var frequence = 2000
+var duree = 20000
  
 func _init().(liste_enemie, duree, frequence, "res://Scenes/Niveaux/niveau-2.tscn"):
 	pass

@@ -49,7 +49,6 @@ func animate_deplacement(direction):
 
 
 func verifier_mouvement_en_cours(p):
-	print(p)
 	if p.x < 50 && p.x > -50:
 		 mouvement_en_cours = false
 	if p.y < 1 && p.y > -1:
