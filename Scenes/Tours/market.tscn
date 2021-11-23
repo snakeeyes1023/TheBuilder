@@ -166,4 +166,3 @@ shape = SubResource( 1 )
 [connection signal="pressed" from="Label1/TextureButton1" to="." method="_on_TextureButton1_pressed"]
 [connection signal="pressed" from="Label2/TextureButton2" to="." method="_on_TextureButton2_pressed"]
 [connection signal="pressed" from="Label3/TextureButton3" to="." method="_on_TextureButton3_pressed"]
-[connection signal="body_entered" from="Area2D" to="." method="Supp_balle"]

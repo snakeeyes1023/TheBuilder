@@ -4,6 +4,7 @@ var velocity = Vector2()
 export var degat = 2
 
 
+#Fonction pour savoir où qu'il va et où il spown au début.
 func start(pos, dir):
 	rotation = dir
 	position = pos
@@ -12,6 +13,7 @@ func start(pos, dir):
 
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
+	#S'il entre en collision avec quelque chose qui peut prendre des dégâts le blesse et après disparait
 	if collision:
 		if collision.collider.has_method("hit"):
 			collision.collider.hit(degat)
