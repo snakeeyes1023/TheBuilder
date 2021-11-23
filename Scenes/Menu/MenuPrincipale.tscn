@@ -30,9 +30,9 @@ __meta__ = {
 }
 
 [node name="ButtonJouer" type="Button" parent="VBoxContainer"]
-margin_top = 62.0
+margin_top = 61.0
 margin_right = 371.0
-margin_bottom = 82.0
+margin_bottom = 81.0
 rect_pivot_offset = Vector2( -987.065, -387.769 )
 text = "Jouer"
 __meta__ = {
@@ -40,9 +40,9 @@ __meta__ = {
 }
 
 [node name="ButtonQuitter" type="Button" parent="VBoxContainer"]
-margin_top = 86.0
+margin_top = 85.0
 margin_right = 371.0
-margin_bottom = 106.0
+margin_bottom = 105.0
 text = "Quitter"
 __meta__ = {
 "_edit_use_anchors_": false
